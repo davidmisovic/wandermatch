@@ -2,86 +2,64 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center px-4 py-8 bg-white">
-      <div className="flex flex-col-reverse md:flex-row items-center gap-10 max-w-6xl w-full">
-        {/* Textová sekcia */}
-        <div className="flex-1 w-full max-w-lg">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 leading-tight">
+    <main className="min-h-screen flex items-center justify-center bg-white px-4">
+      <div className="max-w-4xl w-full grid md:grid-cols-2 gap-10 items-center">
+        {/* LEFT SIDE – Login content */}
+        <div className="w-full max-w-md mx-auto">
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">
             Find your perfect <br /> travel match
           </h1>
-          <p className="text-gray-600 mb-6 text-lg">
+          <p className="text-gray-600 mb-8">
             Connect with like-minded travelers and explore the world together.
           </p>
 
-          <div className="space-y-3">
-            {/* Google Login */}
-            <button className="flex items-center gap-3 bg-gradient-to-r from-purple-500 to-blue-500 text-white px-6 py-3 rounded-lg w-full shadow-md">
-              <Image src="/images/google-icon.svg" alt="Google" width={24} height={24} />
-              Sign in with Google
-            </button>
+          {/* Google login */}
+          <button className="flex items-center justify-center gap-3 bg-gradient-to-r from-purple-500 to-blue-500 text-white font-medium py-3 px-6 rounded-xl w-full shadow-md">
+            <Image src="/images/google-icon.svg" alt="Google" width={20} height={20} />
+            Sign in with Google
+          </button>
 
-            {/* Apple Login */}
-            <button className="flex items-center gap-3 border border-gray-300 px-6 py-3 rounded-lg w-full shadow-sm">
-              <Image src="/images/apple-icon.svg" alt="Apple" width={24} height={24} />
-              Sign in with Apple
-            </button>
+          {/* Apple login */}
+          <button className="flex items-center justify-center gap-3 border border-gray-300 text-black font-medium py-3 px-6 rounded-xl w-full mt-4 shadow-sm">
+            <Image src="/images/apple-icon.svg" alt="Apple" width={20} height={20} />
+            Sign in with Apple
+          </button>
 
-            {/* OR Divider */}
-            <div className="flex items-center justify-center text-gray-400 text-sm py-2">or</div>
-
-            {/* Email & Password */}
-            <div className="flex flex-col gap-3">
-              <input
-                type="email"
-                placeholder="Email"
-                className="border px-4 py-2 rounded-md w-full"
-              />
-              <input
-                type="password"
-                placeholder="Password"
-                className="border px-4 py-2 rounded-md w-full"
-              />
-              <button className="bg-gradient-to-r from-purple-500 to-blue-500 text-white px-6 py-2 rounded-md w-full shadow-md">
-                Sign in
-              </button>
-            </div>
+          {/* Divider */}
+          <div className="flex items-center my-6 text-gray-400 text-sm">
+            <hr className="flex-grow border-gray-300" />
+            <span className="px-3">or</span>
+            <hr className="flex-grow border-gray-300" />
           </div>
+
+          {/* Email/password */}
+          <div className="grid grid-cols-2 gap-4">
+            <input
+              type="email"
+              placeholder="Email"
+              className="border border-gray-300 rounded-lg px-4 py-3 text-sm w-full"
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              className="border border-gray-300 rounded-lg px-4 py-3 text-sm w-full"
+            />
+          </div>
+
+          <button className="bg-gradient-to-r from-purple-500 to-blue-500 text-white font-medium py-3 px-6 rounded-xl w-full mt-4 shadow-md">
+            Sign in
+          </button>
         </div>
 
-        {/* Obrázková sekcia */}
-        <div className="flex-1 hidden md:flex justify-center">
+        {/* RIGHT SIDE – Image */}
+        <div className="hidden md:block">
           <Image
-            src="/images/travelers.png"
-            alt="Travelers Illustration"
-            width={400}
-            height={400}
+            src="/images/travelers_image_optimized.png"
+            alt="Travelers illustration"
+            width={500}
+            height={500}
             priority
           />
-        </div>
-      </div>
-
-      {/* Features sekcia */}
-      <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl text-center">
-        <div>
-          <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-full mx-auto flex items-center justify-center text-xl mb-2">
-            🔄
-          </div>
-          <h3 className="font-semibold text-lg">Real-time matching</h3>
-          <p className="text-gray-500 text-sm">Get instantly paired with compatible travelers.</p>
-        </div>
-        <div>
-          <div className="w-12 h-12 bg-purple-100 text-purple-600 rounded-full mx-auto flex items-center justify-center text-xl mb-2">
-            ✅
-          </div>
-          <h3 className="font-semibold text-lg">Verified profiles</h3>
-          <p className="text-gray-500 text-sm">We ensure all members are verified for safety.</p>
-        </div>
-        <div>
-          <div className="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-full mx-auto flex items-center justify-center text-xl mb-2">
-            📅
-          </div>
-          <h3 className="font-semibold text-lg">Plan trips together</h3>
-          <p className="text-gray-500 text-sm">Collaborate on itineraries and travel plans.</p>
         </div>
       </div>
     </main>
